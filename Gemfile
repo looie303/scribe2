@@ -19,6 +19,7 @@ group :test do
   gem 'selenium-webdriver', '2.0.0'
   gem 'capybara', '2.1.0'
   gem 'growl', '1.0.3'
+  gem 'factory_girl_rails', '4.2.1'
 end
 
 # Use SCSS for stylesheets

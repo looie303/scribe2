@@ -3,7 +3,7 @@ require 'spec_helper'
 describe "StaticPages" do
   
   subject { page } # This tells us what "it" means below.
-  
+    
   shared_examples_for "all static pages" do
     it { should have_content(heading) }
     it { should have_title(full_title(page_title)) }
@@ -42,6 +42,15 @@ describe "StaticPages" do
     
     it_should_behave_like "all static pages"
   end
+  
+  describe "signup page" do
+    before { visit signup_path }
+    let(:heading)     { 'Sign up' }
+    let(:page_title)  { 'Sign up' }
+    
+    it_should_behave_like "all static pages"
+  end
+  
   
   it "should have the right links on the layout" do
     visit root_path
