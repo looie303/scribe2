@@ -6,8 +6,10 @@ class CreateKids < ActiveRecord::Migration
       t.string :mname
       t.date :dateofbirth
       t.string :school
+      t.integer :user_id
 
       t.timestamps
     end
+    add_index :kids, [:user_id]
   end
 end
