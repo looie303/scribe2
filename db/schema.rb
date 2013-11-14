@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131105031252) do
+ActiveRecord::Schema.define(version: 20131114155535) do
 
   create_table "kids", force: true do |t|
     t.string   "fname"
@@ -19,12 +19,9 @@ ActiveRecord::Schema.define(version: 20131105031252) do
     t.string   "mname"
     t.date     "dateofbirth"
     t.string   "school"
-    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "kids", ["user_id"], name: "index_kids_on_user_id"
 
   create_table "kids_users", id: false, force: true do |t|
     t.integer "kid_id"

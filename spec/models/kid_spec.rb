@@ -12,7 +12,6 @@ describe Kid do
   it { should respond_to(:fname) }
   it { should respond_to(:lname) }
   it { should respond_to(:dateofbirth) }
-  it { should respond_to(:user_id) }
   it { should respond_to(:users) }  
 
   describe "relationships to Users aka Parents" do   
@@ -43,6 +42,6 @@ describe Kid do
       user1.kids << kid2
       user2.kids << kid1
       kid1.users.count.should_not == kid2.users.count
-    end  
+    end
   end
 end
