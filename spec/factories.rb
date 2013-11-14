@@ -9,4 +9,13 @@ FactoryGirl.define do
       admin true
     end
   end
+  
+  startdate = Date.today - 365*7
+  
+  factory :kid do
+    sequence(:fname)   { |n| "Kid fname #{n}" }
+    sequence(:mname)   { |n| "Kid mname #{n}" }
+    sequence(:lname)   { |n| "Kid lname #{n}" }
+    sequence(:dateofbirth) { |n| startdate - rand(200) }
+  end
 end
