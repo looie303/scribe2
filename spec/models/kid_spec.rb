@@ -23,22 +23,18 @@ describe Kid do
     end
     
     it "should handle a User or Parent with a kid" do
-#      user1.kids << kid1
       user1.kids.count.should == 1
     end
     
     it "should know a kid's Parent or User" do
-#      user1.kids << kid1
       kid1.users.count.should == 1
     end
     
     it "should return a different count for User1 with a kid and User2 with none" do
-#      user1.kids << kid1
       user1.kids.count.should_not == user2.kids.count
     end
     
     it "should handle a kid with 2 Parents or Users" do
-#      user1.kids << kid1
       user2.kids << kid1
       kid1.users.count.should == 2
     end
