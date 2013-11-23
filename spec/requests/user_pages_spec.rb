@@ -53,10 +53,23 @@ describe "User pages" do
   
   describe "profile page" do
     let(:user) { FactoryGirl.create(:user) }
-    before { visit user_path(user) }
+    let(:k1)   { FactoryGirl.create(:kid, fname: "Henry") }
+    let(:k2)   { FactoryGirl.create(:kid, fname: "Imy") }
+    
+    before do 
+      user.kids << k1
+      user.kids << k2
+      visit user_path(user)
+    end
     
     it { should have_content(user.name) }
     it { should have_title(user.name) }
+    
+    describe "kids" do
+      it { should have_content(k1.fname) }
+      it { should have_content(k2.fname) }
+      it { should have_content(user.kids.count) }
+    end
   end
   
   describe "signup page" do
